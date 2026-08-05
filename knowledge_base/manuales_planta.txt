@@ -1,0 +1,547 @@
+===============================================================================
+MANUAL DE MANTENIMIENTO PREDICTIVO Y MATRIZ DE DIAGNÓSTICOS SOP (20 MÁQUINAS)
+===============================================================================
+
+-------------------------------------------------------------------------------
+MÁQUINA: Machine-001 (Bomba Centrífuga de Alta Presión)
+-------------------------------------------------------------------------------
+[Machine-001 | RIESGO 0% A 25% - ESTADO NORMAL]
+Diagnóstico: Operación nominal estable. Telemetría dentro de límites ISO 10816-3.
+Recomendaciones:
+- Continuar con la rutina de inspección visual semanal.
+- Verificar nivel de aceite lubricante en el visor óptico del alojamiento de rodamientos.
+- Medir temperatura residual mediante cámara termográfica de rutina.
+
+[Machine-001 | RIESGO 26% A 55% - ATENCIÓN / PREVENTIVO]
+Diagnóstico: Incipiente degradación por cavitación leve o turbulencia en la línea de succión.
+Recomendaciones:
+- Verificar presión de entrada (NPSH disponible) y limpiar filtro Y de la tubería de succión.
+- Tomar muestra de aceite ISO VG 46 para análisis de viscosidad y partículas de desgaste.
+- Inspeccionar la estanqueidad del sello mecánico y reapretar bridas de acoplamiento a 35 Nm.
+
+[Machine-001 | RIESGO 56% A 80% - RIESGO ALTO]
+Diagnóstico: Desgaste avanzado en rodamientos de apoyo (SKF 6312) o desbalanceo del impulsor por incrustaciones.
+Recomendaciones:
+- Programar intervención preventivo-correctiva dentro de las próximas 48 horas.
+- Realizar análisis de espectro de vibración en alta frecuencia (1x y 2x RPM) para confirmar fallo en pista exterior.
+- Reemplazar lubricante por grasa sintética para alta temperatura e inspeccionar juego axial del eje.
+
+[Machine-001 | RIESGO 81% A 100% - FASE CRÍTICA / PARADA INMINENTE]
+Diagnóstico: Fallo severo inminente en rodamientos, riesgo de rozamiento del impulsor contra la carcasa.
+Recomendaciones:
+- PARADA DE EMERGENCIA SUGERIDA: Derivar caudal a bomba de reserva inmediatamente.
+- Aislar eléctricamente el motor mediante procedimiento LOTO (Lockout/Tagout).
+- Reemplazar ensamble de rodamientos y verificar alineación láser del eje motor-bomba antes de re-arranque.
+
+-------------------------------------------------------------------------------
+MÁQUINA: Machine-002 (Bomba de Reserva de Alimentación)
+-------------------------------------------------------------------------------
+[Machine-002 | RIESGO 0% A 25% - ESTADO NORMAL]
+Diagnóstico: Standby operativo óptimo sin fugas ni asentamientos en sellos.
+Recomendaciones:
+- Arrancar en vacío 10 minutos semanalmente para rotar ejes y evitar sedimentación de empaquetaduras.
+- Medir resistencia de aislamiento electromagnético en bobinado de estator.
+
+[Machine-002 | RIESGO 26% A 55% - ATENCIÓN / PREVENTIVO]
+Diagnóstico: Ligero agarrotamiento por inactividad o cristalización de fluido en la voluta.
+Recomendaciones:
+- Girar el eje manualmente 360 grados para comprobar soltura mecánica.
+- Verificar estanqueidad de la válvula de retención (check) en la descarga.
+
+[Machine-002 | RIESGO 56% A 80% - RIESGO ALTO]
+Diagnóstico: Degradación en sellos elastoméricos y oxidación incipiente en pista de rodamientos por humedad.
+Recomendaciones:
+- Reemplazar sellos mecánicos Viton y purgar la voluta de la bomba.
+- Re-lubricar cojinetes con grasa EP2 y tomar medición de aislamiento (Megger test).
+
+[Machine-002 | RIESGO 81% A 100% - FASE CRÍTICA / PARADA INMINENTE]
+Diagnóstico: Eje bloqueado o cortocircuito a tierra en bobinado del motor por condensación severa.
+Recomendaciones:
+- Marcar equipo como FUERA DE SERVICIO en el sistema MES.
+- Desmontar motor eléctrico para secado en horno térmico y rebobinado si aplica.
+
+-------------------------------------------------------------------------------
+MÁQUINA: Machine-003 (Compresor Principal de Aire Industrial)
+-------------------------------------------------------------------------------
+[Machine-003 | RIESGO 0% A 25% - ESTADO NORMAL]
+Diagnóstico: Presión de línea estable a 7.5 bar. Ciclo de carga/descarga nominal.
+Recomendaciones:
+- Inspección diaria de purga automática de condensados en tanque pulmón.
+- Verificar presión diferencial en filtros de entrada.
+
+[Machine-003 | RIESGO 26% A 55% - ATENCIÓN / PREVENTIVO]
+Diagnóstico: Incremento moderado en temperatura de descarga por saturación de filtros de aire.
+Recomendaciones:
+- Sopletear o reemplazar filtro de admisión de aire seco.
+- Inspeccionar nivel y estado de degradación del aceite del enfriador.
+
+[Machine-003 | RIESGO 56% A 80% - RIESGO ALTO]
+Diagnóstico: Desgaste en rodamientos de los tornillos de compresión y desalineación en acoplamiento.
+Recomendaciones:
+- Inspeccionar válvula de retención de aceite y termostática.
+- Tomar muestra de lubricante para medir partículas por millón (PPM) de hierro y cobre.
+
+[Machine-003 | RIESGO 81% A 100% - FASE CRÍTICA / PARADA INMINENTE]
+Diagnóstico: Riesgo de enclavamiento físico de los tornillos por sobretemperatura (>108°C).
+Recomendaciones:
+- Detener compresor de inmediato. Derivar demanda a compresor auxiliar.
+- Inspeccionar bloque de compresión antes de reintentar arranque.
+
+-------------------------------------------------------------------------------
+MÁQUINA: Machine-004 (Compresor Rotativo Auxiliar)
+-------------------------------------------------------------------------------
+[Machine-004 | RIESGO 0% A 25% - ESTADO NORMAL]
+Diagnóstico: Eficiencia volumétrica dentro de estándar de fábrica.
+Recomendaciones:
+- Limpieza externa de aletas del radiador de aluminio.
+- Revisar apriete de bornes eléctricos en el tablero principal.
+
+[Machine-004 | RIESGO 26% A 55% - ATENCIÓN / PREVENTIVO]
+Diagnóstico: Fuga menor en línea de pilotaje neumático y vibración armónica en base.
+Recomendaciones:
+- Cambiar mangueras de control neumático agrietadas.
+- Verificar ajuste de silemblocks y amortiguadores de vibración de la base.
+
+[Machine-004 | RIESGO 56% A 80% - RIESGO ALTO]
+Diagnóstico: Saturación severa en el elemento separador aire/aceite con arrastre de lubricante.
+Recomendaciones:
+- Cambiar filtro separador de aceite y reemplazar aceite sintético.
+- Medir caída de presión en el post-enfriador.
+
+[Machine-004 | RIESGO 81% A 100% - FASE CRÍTICA / PARADA INMINENTE]
+Diagnóstico: Falla en la válvula de carga/descarga (despresurización nula) y sobrecarga en el motor.
+Recomendaciones:
+- Detener y despresurizar el sistema neumático manualmente.
+- Reemplazar Kit de servicio de la válvula de admisión.
+
+-------------------------------------------------------------------------------
+MÁQUINA: Machine-005 (Cinta Transportadora de Granel)
+-------------------------------------------------------------------------------
+[Machine-005 | RIESGO 0% A 25% - ESTADO NORMAL]
+Diagnóstico: Centrado de banda perfecto. Tensión de contrapeso nominal.
+Recomendaciones:
+- Inspección visual de rascadores de banda e impacto de polines.
+- Engrase mensual de polipastos de retorno.
+
+[Machine-005 | RIESGO 26% A 55% - ATENCIÓN / PREVENTIVO]
+Diagnóstico: Desviación lateral del tramo superior por acumulación de material en tambor motriz.
+Recomendaciones:
+- Limpiar superficie del tambor motriz con rascador de goma.
+- Ajustar tensión del sistema de contrapeso y alinear polines de centradores.
+
+[Machine-005 | RIESGO 56% A 80% - RIESGO ALTO]
+Diagnóstico: Desgaste en dientes del motorreductor (engranajes helicoidales) y holgura mecánica.
+Recomendaciones:
+- Cambiar aceite del reductor (ISO VG 220) e inspeccionar virutas magnéticas en el tapón.
+- Reemplazar rodillos trabados en el tramo de carga.
+
+[Machine-005 | RIESGO 81% A 100% - FASE CRÍTICA / PARADA INMINENTE]
+Diagnóstico: Grieta longitudinal severa en la lona de la banda o sobrecalentamiento crítico en reductor (>90°C).
+Recomendaciones:
+- Detener la alimentación de material desde la tolva superior.
+- Reparar banda mediante vulcanizado en frío e inspeccionar freno electrodinámico.
+
+-------------------------------------------------------------------------------
+MÁQUINA: Machine-006 (Cinta Transportadora de Envases)
+-------------------------------------------------------------------------------
+[Machine-006 | RIESGO 0% A 25% - ESTADO NORMAL]
+Diagnóstico: Movimiento suave, bajo nivel de ruido, guías laterales alineadas.
+Recomendaciones:
+- Limpiar acumulaciones de polvo en fotocélulas de presencia.
+- Lubricar cadenas de transmisión lateral.
+
+[Machine-006 | RIESGO 26% A 55% - ATENCIÓN / PREVENTIVO]
+Diagnóstico: Desgaste en la cadena plástica modular por fricción seca.
+Recomendaciones:
+- Aplicar lubricante seco aprobado para grado alimenticio o industrial según corresponda.
+- Reglar tensión del piñón tensor de retorno.
+
+[Machine-006 | RIESGO 56% A 80% - RIESGO ALTO]
+Diagnóstico: Salto de eslabones en piñón motriz por deformación de cadena.
+Recomendaciones:
+- Reemplazar tramo deformado de la cadena modular.
+- Calibrar embrague de seguridad neumático.
+
+[Machine-006 | RIESGO 81% A 100% - FASE CRÍTICA / PARADA INMINENTE]
+Diagnóstico: Atascamiento total de cadena, sobrecorriente en el variador de frecuencia (VFD).
+Recomendaciones:
+- Parada de línea. Retirar obstrucción mecánica en el túnel de transporte.
+- Resetear protección térmica del variador de frecuencia previo chequeo.
+
+-------------------------------------------------------------------------------
+MÁQUINA: Machine-007 (Mezclador Industrial de Soluciones)
+-------------------------------------------------------------------------------
+[Machine-007 | RIESGO 0% A 25% - ESTADO NORMAL]
+Diagnóstico: Agitación homógenea. Sellos de prensaestopas sin fugas.
+Recomendaciones:
+- Verificar par de apriete del acoplamiento entre eje y motor.
+- Tomar consumo de corriente por fase en vaciado y llenado.
+
+[Machine-007 | RIESGO 26% A 55% - ATENCIÓN / PREVENTIVO]
+Diagnóstico: Vibración por desbalanceo hidrodinámico en las paletas de agitación.
+Recomendaciones:
+- Limpiar depósitos o incrustaciones sólidas adheridas a los álabes del agitador.
+- Comprobar empaquetadura del prensaestopas y reajustar brida.
+
+[Machine-007 | RIESGO 56% A 80% - RIESGO ALTO]
+Diagnóstico: Desgaste severo en el cojinete inferior de guía del eje agitador.
+Recomendaciones:
+- Intervenir tanque para reemplazar casquillo de teflón/bronce del cojinete de fondo.
+- Medir coaxialidad del eje con comparador caratular.
+
+[Machine-007 | RIESGO 81% A 100% - FASE CRÍTICA / PARADA INMINENTE]
+Diagnóstico: Excentricidad severa en eje con riesgo de deformación permanente o rotura de sello.
+Recomendaciones:
+- Parar proceso de mezclado y vaciar estanque de reacción.
+- Reemplazar eje principal y grupo reductor planetario.
+
+-------------------------------------------------------------------------------
+MÁQUINA: Machine-008 (Ventilador de Tiro Forzado - Caldera)
+-------------------------------------------------------------------------------
+[Machine-008 | RIESGO 0% A 25% - ESTADO NORMAL]
+Diagnóstico: Flujo de aire de combustión constante. Balanceo dinámico en límites ISO G2.5.
+Recomendaciones:
+- Inspección visual de la compuerta de regulación de aire (Damper).
+- Engrase periódico de soportes de rodamientos de la polea.
+
+[Machine-008 | RIESGO 26% A 55% - ATENCIÓN / PREVENTIVO]
+Diagnóstico: Acumulación de hollín o partículas en los álabes del rodete.
+Recomendaciones:
+- Realizar limpieza hidrolavadora en el rodete para corregir vibración 1X.
+- Tensionar correas de transmisión tipo V según especificación.
+
+[Machine-008 | RIESGO 56% A 80% - RIESGO ALTO]
+Diagnóstico: Falla en pista interna de cojinetes pillow-block por sobretemperatura de gases.
+Recomendaciones:
+- Reemplazar cartuchos de rodamientos e inspeccionar sistema de lubricación por baño de aceite.
+- Medir alineación de las poleas con alineador láser.
+
+[Machine-008 | RIESGO 81% A 100% - FASE CRÍTICA / PARADA INMINENTE]
+Diagnóstico: Fisura por fatiga en la manzana del rodete o vibración destructiva (>12 mm/s RMS).
+Recomendaciones:
+- PARADA INMEDIATA DE CALDERA por pérdida de tiro forzado.
+- Realizar ensayos no destructivos (Líquidos penetrantes) en la manzana del rodete.
+
+-------------------------------------------------------------------------------
+MÁQUINA: Machine-009 (Extrusora de Polímeros)
+-------------------------------------------------------------------------------
+[Machine-009 | RIESGO 0% A 25% - ESTADO NORMAL]
+Diagnóstico: Perfil térmico de zonas 1 a 6 estabilizado. Presión de masa constante.
+Recomendaciones:
+- Control de apriete en resistencias eléctricas de banda.
+- Revisar estado de termocuplas tipo J/K.
+
+[Machine-009 | RIESGO 26% A 55% - ATENCIÓN / PREVENTIVO]
+Diagnóstico: Fluctuación en la presión de fusión por desgaste parcial del husillo/husillo bloqueado por polímero degradado.
+Recomendaciones:
+- Purgar el cañón con compuesto de limpieza de alta viscosidad.
+- Calibrar los controladores PID de temperatura de la zona de plastificación.
+
+[Machine-009 | RIESGO 56% A 80% - RIESGO ALTO]
+Diagnóstico: Desgaste en la garganta de alimentación y rodamiento axial de empuje (Thrust Bearing).
+Recomendaciones:
+- Inspeccionar juego entre husillo y camisa con galgas de espesor.
+- Analizar estado del aceite sintético en la caja de engranajes principal.
+
+[Machine-009 | RIESGO 81% A 100% - FASE CRÍTICA / PARADA INMINENTE]
+Diagnóstico: Bloqueo mecánico del husillo (Taponamiento en frío) y disparo por alto torque del motor.
+Recomendaciones:
+- Mantener calefacción encendida para fundir polímero atrapado.
+- NO FORZAR ARRANQUE. Inspeccionar estado de la chaveta del motorreductor.
+
+-------------------------------------------------------------------------------
+MÁQUINA: Machine-010 (Inyectora de Plástico Hidráulica)
+-------------------------------------------------------------------------------
+[Machine-010 | RIESGO 0% A 25% - ESTADO NORMAL]
+Diagnóstico: Presión de cierre de molde estable. Aceite hidráulico a 42°C.
+Recomendaciones:
+- Tomar muestra de aceite para recuento de partículas ISO 4406.
+- Limpiar columnas de guiado de platinas.
+
+[Machine-010 | RIESGO 26% A 55% - ATENCIÓN / PREVENTIVO]
+Diagnóstico: Fuga interna en válvulas proporcionales o degradación del aceite hidráulico.
+Recomendaciones:
+- Reemplazar filtro de retorno hidráulico de 10 micras.
+- Comprobar funcionamiento del intercambiador de calor agua-aceite.
+
+[Machine-010 | RIESGO 56% A 80% - RIESGO ALTO]
+Diagnóstico: Cavitación en bomba servohidráulica de pistones axiales por succión restringida.
+Recomendaciones:
+- Limpiar tamiz de succión dentro del depósito hidráulico.
+- Verificar empaquetaduras del cilindro principal de inyección.
+
+[Machine-010 | RIESGO 81% A 100% - FASE CRÍTICA / PARADA INMINENTE]
+Diagnóstico: Ruptura de sello en acumulador de nitrógeno o sobretemperatura en circuito (>65°C).
+Recomendaciones:
+- Despresurizar el circuito hidráulico y descargar acumuladores.
+- Reemplazar vejiga del acumulador y revisar refrigeración del aceite.
+
+-------------------------------------------------------------------------------
+MÁQUINA: Machine-011 (Centro de Mecanizado 5 Ejes)
+-------------------------------------------------------------------------------
+[Machine-011 | RIESGO 0% A 25% - ESTADO NORMAL]
+Diagnóstico: Repetibilidad y precisión dentro de tolerancias de micras.
+Recomendaciones:
+- Verificación del nivel de refrigerante (taladrina) y concentración Brix.
+- Engrase automático de guías lineales y husillos de bolas.
+
+[Machine-011 | RIESGO 26% A 55% - ATENCIÓN / PREVENTIVO]
+Diagnóstico: Holgura incipiente en los rodajes del Electro-Mandril (Spindle).
+Recomendaciones:
+- Ejecutar rutina de Run-out en el cono del cabezal con indicador dial.
+- Limpiar filtros del sistema de refrigeración interna por el centro del herramienta.
+
+[Machine-011 | RIESGO 56% A 80% - RIESGO ALTO]
+Diagnóstico: Desalineación geométrica en ejes X/Y y vibración en el cabezal durante el fresado severo.
+Recomendaciones:
+- Ejecutar prueba de Ballbar de Renishaw para evaluar circularidad y juego en ejes.
+- Inspeccionar sistema de sujeción neumático/hidráulico de la herramienta.
+
+[Machine-011 | RIESGO 81% A 100% - FASE CRÍTICA / PARADA INMINENTE]
+Diagnóstico: Falla severa en rodamientos cerámicos del Spindle por colisión o falta de lubricación.
+Recomendaciones:
+- Parar mecanizado. Retirar piezas y herramientas.
+- Reemplazar el cartucho completo del Electro-Mandril (Spindle rebuild).
+
+-------------------------------------------------------------------------------
+MÁQUINA: Machine-012 (Empacadora Automática de Sólidos)
+-------------------------------------------------------------------------------
+[Machine-012 | RIESGO 0% A 25% - ESTADO NORMAL]
+Diagnóstico: Tiempo de ciclo de sellado y corte sincronizado.
+Recomendaciones:
+- Limpiar residuos de polietileno quemado en las mordazas de sellado.
+- Inspeccionar presión del neumático principal (6 bar).
+
+[Machine-012 | RIESGO 26% A 55% - ATENCIÓN / PREVENTIVO]
+Diagnóstico: Desgaste en la cinta de teflón de las mordazas de sellado térmico.
+Recomendaciones:
+- Reemplazar tela de teflón y resistencia de nicromio de las mordazas.
+- Calibrar sensor inductivo de punto cero.
+
+[Machine-012 | RIESGO 56% A 80% - RIESGO ALTO]
+Diagnóstico: Desfasamiento mecánico en servomotores de arrastre de película plástica.
+Recomendaciones:
+- Ajustar bandas dentadas de sincronización de servomotores.
+- Comprobar encoders de posición lineal.
+
+[Machine-012 | RIESGO 81% A 100% - FASE CRÍTICA / PARADA INMINENTE]
+Diagnóstico: Atascamiento en la cuchilla de corte con bloqueo total del árbol de levas.
+Recomendaciones:
+- Activar parada de emergencia. Purgar presión del manifold neumático.
+- Reemplazar cilindro neumático de corte y ajustar guías de rodamiento.
+
+-------------------------------------------------------------------------------
+MÁQUINA: Machine-013 (Prensa Hidráulica de Estampado)
+-------------------------------------------------------------------------------
+[Machine-013 | RIESGO 0% A 25% - ESTADO NORMAL]
+Diagnóstico: TONELAJE nominal alcanzado sin caídas de presión en el punto muerto inferior.
+Recomendaciones:
+- Inspeccionar paralelismo de la mesa con palpador dial.
+- Lubricación centralizada de guías de bronce.
+
+[Machine-013 | RIESGO 26% A 55% - ATENCIÓN / PREVENTIVO]
+Diagnóstico: Desgaste leve en las empaquetaduras del pistón hidráulico principal.
+Recomendaciones:
+- Reapretar pernos de fijación de la cabeza de cilindro.
+- Monitorear fugas internas mediante prueba de sostenimiento de carga.
+
+[Machine-013 | RIESGO 56% A 80% - RIESGO ALTO]
+Diagnóstico: Fisura en la cortina de seguridad de aceite o choque hidráulico por falla de precarga.
+Recomendaciones:
+- Inspeccionar válvulas de llenado rápido (Pre-fill valves).
+- Realizar inspección por ultrasonido en la estructura del bastidor en C.
+
+[Machine-013 | RIESGO 81% A 100% - FASE CRÍTICA / PARADA INMINENTE]
+Diagnóstico: Ruptura de empaquetadura principal con pérdida masiva de tonelaje y riesgo de caída del troquel.
+Recomendaciones:
+- Inserción de trabas mecánicas de seguridad en la mesa para mantenimiento.
+- Cambio urgente del kit de empaquetaduras Chevron del cilindro principal.
+
+-------------------------------------------------------------------------------
+MÁQUINA: Machine-014 (Caldera de Vapor Pirotubular)
+-------------------------------------------------------------------------------
+[Machine-014 | RIESGO 0% A 25% - ESTADO NORMAL]
+Diagnóstico: Eficiencia de combustión >85%. Purga de lodos funcionando según timer.
+Recomendaciones:
+- Medir concentración de sólidos disueltos totales (TDS) en agua de caldera.
+- Inspeccionar llama del quemador por mirilla de cuarzo.
+
+[Machine-014 | RIESGO 26% A 55% - ATENCIÓN / PREVENTIVO]
+Diagnóstico: Incrustación ligera de carbonatos en tubos de fuego por desviación en ablandadores.
+Recomendaciones:
+- Analizar dureza del agua de reposición y ajustar dosificación de sulfito/fosfato.
+- Limpiar fotocélula de detección de llama del quemador.
+
+[Machine-014 | RIESGO 56% A 80% - RIESGO ALTO]
+Diagnóstico: Elevación de la temperatura de gases de chimenea (>240°C) por hollín o incrustación severa.
+Recomendaciones:
+- Programar deshollinado manual de tubos pirotubulares.
+- Limpiar o cambiar la boquilla inyectora de combustible (Diesel/Gas).
+
+[Machine-014 | RIESGO 81% A 100% - FASE CRÍTICA / PARADA INMINENTE]
+Diagnóstico: Bajo nivel de agua crítico con riesgo de deformación del hogar o choque térmico.
+Recomendaciones:
+- APAGADO AUTOMÁTICO DE SEGURIDAD. No meter agua fría si el nivel se perdió visualmente.
+- Inspeccionar electrodos de nivel McDonnell & Miller e interrumpir fuego.
+
+-------------------------------------------------------------------------------
+MÁQUINA: Machine-015 (Chiller de Agua Helada)
+-------------------------------------------------------------------------------
+[Machine-015 | RIESGO 0% A 25% - ESTADO NORMAL]
+Diagnóstico: Temperatura de salida de agua a 7°C. Subenfriamiento y recalentamiento correctos.
+Recomendaciones:
+- Medir presiones de alta y baja en el circuito con manómetros de refrigeración.
+- Verificar flujo de agua con interruptor de flujo (Flow Switch).
+
+[Machine-015 | RIESGO 26% A 55% - ATENCIÓN / PREVENTIVO]
+Diagnóstico: Incrustación en los tubos del evaporador/condensador por agua dura.
+Recomendaciones:
+- Medir aproximación (Approach temperature) en el evaporador.
+- Ejecutar limpieza química de tubos mediante circuito cerrado de desincrustante.
+
+[Machine-015 | RIESGO 56% A 80% - RIESGO ALTO]
+Diagnóstico: Fuga parcial de gas refrigerante R134a o humedad en el filtro secador.
+Recomendaciones:
+- Detectar fuga mediante rastreador electrónico de halógenos.
+- Reemplazar núcleo del filtro secador de la línea de líquido.
+
+[Machine-015 | RIESGO 81% A 100% - FASE CRÍTICA / PARADA INMINENTE]
+Diagnóstico: Disparo por baja presión de succión (Riesgo de congelamiento del evaporador y rotura de tubos).
+Recomendaciones:
+- Apagar el compresor centrífugo/tornillo.
+- Purgar agua y realizar prueba de estanqueidad con nitrógeno seco.
+
+-------------------------------------------------------------------------------
+MÁQUINA: Machine-016 (Robot Articulado de Paletizado)
+-------------------------------------------------------------------------------
+[Machine-016 | RIESGO 0% A 25% - ESTADO NORMAL]
+Diagnóstico: Repetibilidad en trayectoria del gripper perfecta. Sin alarmas en servodrives.
+Recomendaciones:
+- Inspección visual de la manguera umbilical y cables de señal.
+- Limpieza de ventosas de vacío del Gripper.
+
+[Machine-016 | RIESGO 26% A 55% - ATENCIÓN / PREVENTIVO]
+Diagnóstico: Desgaste en la grasa de los reductores cicloidales de los ejes 2 y 3.
+Recomendaciones:
+- Tomar muestra de grasa de los reductores para verificar virutas.
+- Ajustar tensión de fajas internas del eje 1.
+
+[Machine-016 | RIESGO 56% A 80% - RIESGO ALTO]
+Diagnóstico: Error de colisión falso por sobrecarga en servomotores debido a falta de lubricación.
+Recomendaciones:
+- Realizar reemplazo completo de grasa sintética (Vigogrease/Molywhite) en los 6 ejes.
+- Recalibrar las marcas de sintonización cero (Mastering) del robot.
+
+[Machine-016 | RIESGO 81% A 100% - FASE CRÍTICA / PARADA INMINENTE]
+Diagnóstico: Falla de aislamiento en el freno dinámico del eje 3 con caída del brazo en desenergización.
+Recomendaciones:
+- Colocar robot en posición de parqueo de seguridad con soporte mecánico.
+- Reemplazar servomotor con freno integrado del eje afectado.
+
+-------------------------------------------------------------------------------
+MÁQUINA: Machine-017 (Vehículo Guiado Autónomo)
+-------------------------------------------------------------------------------
+[Machine-017 | RIESGO 0% A 25% - ESTADO NORMAL]
+Diagnóstico: Navegación LiDAR nominal. Nivel de batería LiFePO4 al 95%.
+Recomendaciones:
+- Limpiar el cristal protector de los escaneres láser de seguridad.
+- Verificar presión de las ruedas de poliuretano.
+
+[Machine-017 | RIESGO 26% A 55% - ATENCIÓN / PREVENTIVO]
+Diagnóstico: Desviación leve de ruta por polvo en los sensores de reflectores de pared.
+Recomendaciones:
+- Calibrar la matriz de mapa del scanner LiDAR.
+- Inspeccionar contactos mecánicos de la estación de carga rápida.
+
+[Machine-017 | RIESGO 56% A 80% - RIESGO ALTO]
+Diagnóstico: Desgaste irregular en la rueda motriz diferencial, causando deriva en línea recta.
+Recomendaciones:
+- Reemplazar el recubrimiento de poliuretano de las ruedas motrices.
+- Comprobar alineación del eje de tracción.
+
+[Machine-017 | RIESGO 81% A 100% - FASE CRÍTICA / PARADA INMINENTE]
+Diagnóstico: Falla en el circuito de parada de seguridad (Safety PLC) o batería descalibrada.
+Recomendaciones:
+- Retirar AGV del área de circulación manualmente.
+- Reemplazar módulo de baterías e inspeccionar el relé de seguridad del bumper.
+
+-------------------------------------------------------------------------------
+MÁQUINA: Machine-018 (Horno Rotativo de Secado)
+-------------------------------------------------------------------------------
+[Machine-018 | RIESGO 0% A 25% - ESTADO NORMAL]
+Diagnóstico: Perfil Térmico longitudinal según curva. Velocidad de rotación estable.
+Recomendaciones:
+- Engrase del piñón corona de accionamiento principal.
+- Medición de la temperatura del casco mediante pirómetro infrarrojo.
+
+[Machine-018 | RIESGO 26% A 55% - ATENCIÓN / PREVENTIVO]
+Diagnóstico: Vibración por excentricidad en los rodillos de apoyo (Llantas/Llantones).
+Recomendaciones:
+- Re-alinear los rodillos de apoyo para distribuir el empuje axial.
+- Inspeccionar lubricación del sistema de sellos de entrada/salida.
+
+[Machine-018 | RIESGO 56% A 80% - RIESGO ALTO]
+Diagnóstico: Caída parcial del ladrillo refractario interno (Punto caliente en casco >350°C).
+Recomendaciones:
+- Aplicar enfriamiento por aire forzado externo en la zona con punto caliente.
+- Programar parada para parcheo o cambio de ladrillos refractarios.
+
+[Machine-018 | RIESGO 81% A 100% - FASE CRÍTICA / PARADA INMINENTE]
+Diagnóstico: Deformación plástica permanente del casco por sobretemperatura extrema.
+Recomendaciones:
+- Reducir fuego gradualmente y mantener rotación en marcha lenta (Auxiliary drive) para evitar deformación por peso.
+- Detener carga de material de inmediato.
+
+-------------------------------------------------------------------------------
+MÁQUINA: Machine-019 (Paletizador de Cajas por Capas)
+-------------------------------------------------------------------------------
+[Machine-019 | RIESGO 0% A 25% - ESTADO NORMAL]
+Diagnóstico: Apertura y cierre de mesa formadora de capas sincronizado.
+Recomendaciones:
+- Limpieza de rodillos del transportador de palets vacíos.
+- Lubricación de cadenas elevadoras.
+
+[Machine-019 | RIESGO 26% A 55% - ATENCIÓN / PREVENTIVO]
+Diagnóstico: Holgura en la cadena del elevador de cortina principal.
+Recomendaciones:
+- Ajustar tensores de la cadena elevadora de capas.
+- Revisar desgaste en los rieles de guiado lateral de plástico de ultra alto peso molecular (UHMW).
+
+[Machine-019 | RIESGO 56% A 80% - RIESGO ALTO]
+Diagnóstico: Desincronización en el empujador mecánico de cajas con choque en tope.
+Recomendaciones:
+- Reemplazar servomotor o encoder del eje de empuje.
+- Ajustar topes neumáticos de seguridad.
+
+[Machine-019 | RIESGO 81% A 100% - FASE CRÍTICA / PARADA INMINENTE]
+Diagnóstico: Caída por rotura de cadena del contrapeso del elevador principal.
+Recomendaciones:
+- Bloquear elevador mecánicamente con trancas de trampa de seguridad.
+- Reemplazar conjunto de cadenas de elevación y piñones de mando.
+
+-------------------------------------------------------------------------------
+MÁQUINA: Machine-020 (Tanque Agitador de Almacenamiento)
+-------------------------------------------------------------------------------
+[Machine-020 | RIESGO 0% A 25% - ESTADO NORMAL]
+Diagnóstico: Sensor de nivel por radar emitiendo señal 4-20mA limpia. Válvula de venteo libre.
+Recomendaciones:
+- Inspeccionar visualmente la superficie exterior en busca de ampollas o corrosión.
+- Probar apertura manual de la válvula de alivio de vacío/presión.
+
+[Machine-020 | RIESGO 26% A 55% - ATENCIÓN / PREVENTIVO]
+Diagnóstico: Acumulación de sedimento o costras en el fondo del estanque que interfieren con la agitación.
+Recomendaciones:
+- Activar ciclo de lavado CIP (Clean in Place) con sosa/ácido según procedimiento.
+- Verificar estanqueidad en la brida de la escotilla inferior (Manhole).
+
+[Machine-020 | RIESGO 56% A 80% - RIESGO ALTO]
+Diagnóstico: Fuga por falla de empaquetadura en la brida del agitador lateral de entrada.
+Recomendaciones:
+- Trasvasar producto a tanque de respaldo si el nivel supera el eje del agitador.
+- Reemplazar sello dinámico de teflón del agitador lateral.
+
+[Machine-020 | RIESGO 81% A 100% - FASE CRÍTICA / PARADA INMINENTE]
+Diagnóstico: Corrosión severa detectada por medición de espesor por ultrasonido (Pérdida de espesor crítico de pared).
+Recomendaciones:
+- Vaciar el tanque de inmediato mediante bomba de transferencia.
+- Marcar equipo FUERA DE SERVICIO e inspeccionar soldaduras con radiografía o ultrasonidos.

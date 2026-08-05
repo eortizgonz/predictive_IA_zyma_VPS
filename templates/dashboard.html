@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictive Operations Intelligence</title>
+    <link rel="stylesheet" href="/static/css/experience-v2.css?v=20260804-1345">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-mark">P</div>
+            <div><strong>Predictive</strong><span>Operations Intelligence</span></div>
+        </div>
+        <nav class="sidebar-nav">
+            <a class="nav-item active" href="#executive"><span>01</span>Vista ejecutiva</a>
+            <a class="nav-item" href="#assets"><span>02</span>Activos y diagnóstico</a>
+            <a class="nav-item" href="#analytics"><span>03</span>Analítica predictiva</a>
+            <a class="nav-item" href="#copilot"><span>04</span>Predictive Copilot</a>
+        </nav>
+        <div class="system-card">
+            <span class="live-dot"></span>
+            <div><strong>Plataforma operativa</strong><small>IA + ChromaDB + modelo predictivo</small></div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <span class="eyebrow">CENTRO DE DECISIONES INDUSTRIALES</span>
+                <h1>Predictive Operations Intelligence</h1>
+                <p>Riesgo técnico, impacto operacional y recomendaciones basadas en manuales.</p>
+            </div>
+            <div class="topbar-actions">
+                <span class="demo-badge">Datos simulados</span>
+                <button class="ghost-button" onclick="document.getElementById('copilot').scrollIntoView({behavior:'smooth'})">Consultar Copilot</button>
+            </div>
+        </header>
+
+        <section class="experience-hub" aria-label="Centro de experiencia">
+            <button class="experience-card" type="button" onclick="openExperience('consultas')">
+                <span class="experience-icon">💬</span><span><strong>Consultar Copilot</strong><small>Pregunte por riesgos, activos y decisiones.</small></span><b>→</b>
+            </button>
+            <button class="experience-card" type="button" onclick="openExperience('diagnostico')">
+                <span class="experience-icon">🧠</span><span><strong>Diagnóstico IA</strong><small>Manual técnico + modelo predictivo.</small></span><b>→</b>
+            </button>
+            <button class="experience-card" type="button" onclick="openExperience('finanzas')">
+                <span class="experience-icon">📈</span><span><strong>Impacto financiero</strong><small>Riesgo, pérdida evitable y ROI.</small></span><b>→</b>
+            </button>
+            <button class="experience-card" type="button" onclick="openExperience('tecnologia')">
+                <span class="experience-icon">⚙️</span><span><strong>Tecnología y datos</strong><small>Modelo, fuentes, ChromaDB y confianza.</small></span><b>→</b>
+            </button>
+        </section>
+
+        <section id="executive" class="section-block">
+            <div class="section-heading">
+                <div><span class="section-kicker">RESUMEN EJECUTIVO</span><h2>Estado actual de la operación</h2></div>
+                <p>Una lectura inmediata para Operaciones, Finanzas y Tecnología.</p>
+            </div>
+
+            <div class="kpi-grid">
+                <article class="kpi-card success"><div class="kpi-icon">✓</div><div><span>Máquinas saludables</span><strong id="healthy">0</strong><small>Operación estable</small></div></article>
+                <article class="kpi-card warning-card"><div class="kpi-icon">!</div><div><span>Máquinas en alerta</span><strong id="warning">0</strong><small>Requieren seguimiento</small></div></article>
+                <article class="kpi-card danger"><div class="kpi-icon">×</div><div><span>Máquinas críticas</span><strong id="critical">0</strong><small>Acción prioritaria</small></div></article>
+                <article class="kpi-card primary"><div class="kpi-icon">AI</div><div><span>Riesgo promedio</span><strong id="average-risk">0%</strong><small id="highest-risk-label">Analizando activos</small></div></article>
+            </div>
+
+            <div class="decision-banner">
+                <div class="decision-icon">◎</div>
+                <div><span>DECISIÓN RECOMENDADA</span><strong id="executive-recommendation">Esperando información de los activos...</strong><p id="executive-detail">La plataforma prioriza automáticamente el activo con mayor exposición.</p></div>
+                <button onclick="focusHighestRiskMachine()">Ver activo prioritario</button>
+            </div>
+        </section>
+
+        <section id="assets" class="section-block">
+            <div class="section-heading">
+                <div><span class="section-kicker">CONTROL DE ACTIVOS</span><h2>Diagnóstico por máquina</h2></div>
+                <p>El botón Diagnóstico IA combina el manual del equipo con el resultado del modelo.</p>
+            </div>
+            <div class="panel table-panel">
+                <div class="panel-toolbar">
+                    <div><strong>Estado de máquinas</strong><span id="machine-count">0 activos monitoreados</span></div>
+                    <div class="legend"><span class="legend-item healthy-dot">Saludable</span><span class="legend-item warning-dot">Alerta</span><span class="legend-item critical-dot">Crítico</span></div>
+                </div>
+                <div class="table-scroll">
+                    <table>
+                        <thead><tr><th>Máquina</th><th>Temperatura</th><th>Vibración</th><th>Riesgo</th><th>Estado</th><th>Predicción</th><th>Acción</th></tr></thead>
+                        <tbody id="machine-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="analytics" class="section-block">
+            <div class="section-heading">
+                <div><span class="section-kicker">ANALÍTICA PREDICTIVA</span><h2>Tendencias de comportamiento</h2></div>
+                <p>Señales agregadas para detectar desviaciones y evolución del riesgo.</p>
+            </div>
+            <div class="charts-grid">
+                <article class="panel chart-panel"><div class="chart-title"><span>Temperatura</span><small>Promedio de planta</small></div><div id="temperature-chart"></div></article>
+                <article class="panel chart-panel"><div class="chart-title"><span>Vibración</span><small>Promedio de planta</small></div><div id="vibration-chart"></div></article>
+                <article class="panel chart-panel wide"><div class="chart-title"><span>Riesgo de falla</span><small>Evolución predictiva</small></div><div id="risk-chart"></div></article>
+            </div>
+        </section>
+
+        <section id="copilot" class="section-block predictive-copilot" aria-labelledby="copilot-title">
+            <header class="copilot-header">
+                <div><span class="copilot-kicker">ASISTENTE DE DECISIONES</span><h2 id="copilot-title">Predictive Copilot</h2><p>Converse con el modelo, consulte manuales y compare decisiones.</p></div>
+                <div class="copilot-selectors">
+                    <label>Perfil<select id="user-profile"><option value="operations">Operaciones</option><option value="finance">Finanzas</option><option value="technology">Tecnología</option></select></label>
+                    <label>Máquina<select id="copilot-machine"><option value="">Todas las máquinas</option></select></label>
+                </div>
+            </header>
+            <div id="quick-actions" class="quick-actions"></div>
+            <div class="copilot-workspace">
+                <div id="chat-messages" class="chat-messages" aria-live="polite"></div>
+                <aside class="copilot-guide">
+                    <span>PRUEBE ESTAS CONSULTAS</span>
+                    <strong>Pregunte, compare y decida</strong>
+                    <p>El Copilot combina telemetría, modelo predictivo, impacto operacional y fuentes técnicas.</p>
+                    <div class="guide-step"><b>1</b><span>Identifique el activo de mayor riesgo.</span></div>
+                    <div class="guide-step"><b>2</b><span>Solicite la causa y evidencia del manual.</span></div>
+                    <div class="guide-step"><b>3</b><span>Compare intervenir versus esperar.</span></div>
+                </aside>
+            </div>
+            <div id="copilot-status" class="copilot-status" hidden><span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span><span>Analizando datos</span></div>
+            <form id="chat-form" class="chat-form"><label class="sr-only" for="chat-input">Pregunta</label><input id="chat-input" type="text" autocomplete="off" placeholder="Ej.: ¿Por qué está crítica esta máquina y qué recomienda el manual?" maxlength="300" required><button type="submit" id="chat-submit">Enviar consulta</button></form>
+            <p class="copilot-disclaimer">Entorno demostrativo. Toda recomendación debe validarse por personal autorizado antes de ejecutar acciones.</p>
+        </section>
+    </main>
+</div>
+
+<button id="experience-launcher" class="experience-launcher" type="button" onclick="toggleExperienceDrawer()" aria-label="Abrir Predictive Copilot">
+    <span class="launcher-pulse"></span><span class="launcher-icon">AI</span><span class="launcher-label">Predictive Copilot</span>
+</button>
+
+<div id="experience-backdrop" class="experience-backdrop" onclick="closeExperienceDrawer()"></div>
+<aside id="experience-drawer" class="experience-drawer" aria-label="Predictive Copilot" aria-hidden="true">
+    <header class="experience-drawer-header">
+        <div class="drawer-brand"><span class="drawer-logo">AI</span><div><strong>Predictive Copilot</strong><small>Centro de decisiones industriales</small></div></div>
+        <button type="button" class="drawer-close" onclick="closeExperienceDrawer()" aria-label="Cerrar">×</button>
+    </header>
+    <div class="drawer-context">
+        <label>Perfil<select id="drawer-profile"><option value="operations">Operaciones</option><option value="finance">Finanzas</option><option value="technology">Tecnología</option></select></label>
+        <label>Máquina<select id="drawer-machine"><option value="">Todas las máquinas</option></select></label>
+    </div>
+    <div class="drawer-welcome">
+        <span class="drawer-avatar">◎</span>
+        <div><strong>¿Qué decisión desea analizar?</strong><p>El asistente combina el predictivo, manuales, impacto operacional y financiero.</p></div>
+    </div>
+    <div class="drawer-actions">
+        <button type="button" data-experience-action="consultas"><span>💬</span><strong>Consultas</strong><small>Activo prioritario</small></button>
+        <button type="button" data-experience-action="diagnostico"><span>🧠</span><strong>Diagnóstico IA</strong><small>Manual + modelo</small></button>
+        <button type="button" data-experience-action="finanzas"><span>📈</span><strong>Finanzas</strong><small>Pérdida y ROI</small></button>
+        <button type="button" data-experience-action="tecnologia"><span>⚙️</span><strong>Tecnología</strong><small>Datos y fuentes</small></button>
+    </div>
+    <div id="drawer-messages" class="drawer-messages" aria-live="polite"></div>
+    <div id="drawer-status" class="drawer-status" hidden><span></span><span></span><span></span> Analizando información</div>
+    <form id="drawer-form" class="drawer-form">
+        <input id="drawer-input" type="text" placeholder="Escriba una pregunta..." maxlength="300" autocomplete="off" required>
+        <button id="drawer-submit" type="submit" aria-label="Enviar">➤</button>
+    </form>
+    <p class="drawer-disclaimer">Entorno demostrativo. Las recomendaciones requieren validación técnica.</p>
+</aside>
+
+<div id="aiModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+        <div class="modal-header"><div><span class="modal-kicker">DIAGNÓSTICO FUNDAMENTADO</span><h2 id="modalTitle">Diagnóstico IA</h2></div><button class="modal-x" onclick="closeModal()" aria-label="Cerrar">×</button></div>
+        <div id="modalContent" class="modal-body"></div>
+        <div class="modal-footer"><button class="btn-close" onclick="closeModal()">Cerrar diagnóstico</button><button class="btn-secondary" onclick="openDiagnosticInCopilot()">Consultar en Copilot</button></div>
+    </div>
+</div>
+
+<script src="/static/js/charts.js?v=20260804-1345"></script>
+<script src="/static/js/dashboard.js?v=20260804-1345"></script>
+<script src="/static/js/predictive-chat.js?v=20260804-1345"></script>
+<script src="/static/js/experience-layer.js?v=20260804-1345"></script>
+</body>
+</html>
