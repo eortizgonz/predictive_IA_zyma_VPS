@@ -31,7 +31,7 @@ function chartLayout(chartId, yTitle) {
         font: { color: '#91a3bc', size: 10 },
         margin: { l: 48, r: 18, t: 12, b: 38 },
         xaxis: {
-            title: 'Tiempo',
+            title: 'Tiempo / min',
             gridcolor: 'rgba(145,163,188,.10)',
             zeroline: false,
             automargin: true
