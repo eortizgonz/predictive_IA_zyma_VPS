@@ -1,1 +1,11 @@
 data/chroma/
+*.db
+*.sqlite3
+.venv
+venv
+__pycache__
+*.py[cod]
+*$py.class
+.env
+.vscode/
+.idea/

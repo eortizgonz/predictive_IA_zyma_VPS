@@ -50,6 +50,7 @@
 
     function appendMessage(role, html) {
         const messages = byId("chat-messages");
+        if (!messages) return;
         const article = document.createElement("article");
         article.className = `chat-message ${role === "user" ? "user-message" : "assistant-message"}`;
         article.innerHTML = `<div class="message-avatar">${role === "user" ? "TÚ" : "AI"}</div><div class="message-content">${html}</div>`;
@@ -65,10 +66,16 @@
 
     const money = (value, currency) => new Intl.NumberFormat("es-CL", { style: "currency", currency, maximumFractionDigits: 0 }).format(value);
 
+    // AJUSTE: Soporte híbrido para Ollama (Texto) y Servicio Estructurado
     function renderResponse(data) {
-        const machine = data.machine;
-        const op = data.operational_impact;
-        const fin = data.financial_impact;
+        const textContent = data.answer || data.reply;
+        if (textContent) {
+            return `<p>${escapeHtml(textContent).replace(/\n/g, '<br>')}</p>`;
+        }
+
+        const machine = data.machine || {};
+        const op = data.operational_impact || {};
+        const fin = data.financial_impact || {};
         const factors = (data.explanation_factors || []).slice(0, 5)
             .map(item => `<div class="factor-row"><span>${escapeHtml(item.name)}</span><div class="factor-track"><i style="width:${item.contribution}%"></i></div><strong>${item.contribution}%</strong></div>`).join("");
         const sources = (data.sources || []).map(source => `<li><strong>${escapeHtml(source.name)}</strong>: ${escapeHtml(source.excerpt)}</li>`).join("");
@@ -78,11 +85,11 @@
             <p>${escapeHtml(data.recommendation)}</p>
             <div class="copilot-metrics">
                 <div class="copilot-metric"><span>Activo</span><strong>${escapeHtml(machine.machine_id)}</strong></div>
-                <div class="copilot-metric"><span>Riesgo</span><strong>${machine.failure_probability.toFixed(1)}%</strong></div>
-                <div class="copilot-metric"><span>Producción en riesgo</span><strong>${op.production_units_at_risk} unidades</strong></div>
+                <div class="copilot-metric"><span>Riesgo</span><strong>${Number(machine.failure_probability || 0).toFixed(1)}%</strong></div>
+                <div class="copilot-metric"><span>Producción en riesgo</span><strong>${op.production_units_at_risk || 0} unidades</strong></div>
                 <div class="copilot-metric"><span>Pérdida potencial</span><strong>${money(fin.potential_loss, fin.currency)}</strong></div>
                 <div class="copilot-metric"><span>Pérdida evitable</span><strong>${money(fin.avoidable_loss, fin.currency)}</strong></div>
-                <div class="copilot-metric"><span>ROI estimado</span><strong>${fin.roi_multiple}x</strong></div>
+                <div class="copilot-metric"><span>ROI estimado</span><strong>${fin.roi_multiple || 0}x</strong></div>
             </div>
             <details class="copilot-details"><summary>Factores de la predicción</summary>${factors}</details>
             <details class="copilot-details"><summary>Fuentes consultadas</summary><ul>${sources}</ul></details>
@@ -94,14 +101,16 @@
         const question = String(rawQuestion || "").trim();
         if (!question) return;
         appendMessage("user", `<p>${escapeHtml(question)}</p>`);
-        byId("chat-input").value = "";
+        if (byId("chat-input")) byId("chat-input").value = "";
         setAnalyzing(true);
         try {
+            // AJUSTE: Enviar 'prompt' para compatibilidad completa con el backend
             const response = await fetch("/api/copilot/chat", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    question,
+                    prompt: question,
+                    question: question,
                     profile: byId("user-profile")?.value || "operations",
                     machine_id: byId("copilot-machine")?.value || null,
                     conversation_id: conversationId
@@ -109,8 +118,8 @@
             });
             if (!response.ok) throw new Error((await response.json()).detail || "Error del copiloto");
             const data = await response.json();
-            conversationId = data.conversation_id;
-            localStorage.setItem("predictiveConversationId", conversationId);
+            conversationId = data.conversation_id || conversationId;
+            if (conversationId) localStorage.setItem("predictiveConversationId", conversationId);
             appendMessage("assistant", renderResponse(data));
             bindActionButtons();
         } catch (error) {

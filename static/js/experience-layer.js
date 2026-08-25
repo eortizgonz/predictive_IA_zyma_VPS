@@ -55,7 +55,13 @@
     if(byId('drawer-input')) byId('drawer-input').disabled=value;
   }
 
+  // AJUSTE: Renderizar respuesta de texto de Ollama o JSON completo
   function responseHtml(data){
+    const textContent = data.answer || data.reply;
+    if (textContent) {
+      return `<p>${esc(textContent).replace(/\n/g, '<br>')}</p>`;
+    }
+
     const m=data.machine||{}, op=data.operational_impact||{}, fin=data.financial_impact||{};
     const actions=(data.actions||[]).map(a=>`<button type="button" data-drawer-action="${esc(a.id)}" data-machine="${esc(m.machine_id)}">${esc(a.label)}</button>`).join('');
     return `<strong>${esc(data.summary)}</strong><p>${esc(data.recommendation)}</p>
@@ -71,9 +77,21 @@
     const q=String(question||'').trim(); if(!q) return;
     addMessage('user',`<p>${esc(q)}</p>`); if(byId('drawer-input')) byId('drawer-input').value=''; setBusy(true);
     try{
-      const response=await fetch('/api/copilot/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q,profile:byId('drawer-profile')?.value||'operations',machine_id:byId('drawer-machine')?.value||null,conversation_id:drawerConversationId})});
+      // AJUSTE: Se incluye la clave 'prompt' para asegurar compatibilidad con Python
+      const response=await fetch('/api/copilot/chat',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({
+          prompt: q,
+          question: q,
+          profile: byId('drawer-profile')?.value || 'operations',
+          machine_id: byId('drawer-machine')?.value || null,
+          conversation_id: drawerConversationId
+        })
+      });
       const data=await response.json(); if(!response.ok) throw new Error(data.detail||'No fue posible completar la consulta');
-      drawerConversationId=data.conversation_id; localStorage.setItem('drawerConversationId',drawerConversationId);
+      drawerConversationId=data.conversation_id || drawerConversationId; 
+      if(drawerConversationId) localStorage.setItem('drawerConversationId',drawerConversationId);
       addMessage('assistant',responseHtml(data)); bindDrawerActions();
     }catch(error){addMessage('assistant',`<strong>No fue posible completar el análisis.</strong><p>${esc(error.message)}</p>`);}finally{setBusy(false);byId('drawer-input')?.focus();}
   }
@@ -81,6 +99,7 @@
   function runExperienceAction(mode){
     if(mode==='diagnostico'){
       const selected=byId('drawer-machine')?.value;
+      const highestRiskMachineId = drawerMachines.length ? drawerMachines.reduce((max, m) => m.failure_probability > max.failure_probability ? m : max, drawerMachines[0]).machine_id : null;
       const target=selected || highestRiskMachineId;
       if(target && typeof getAiReport==='function'){
         const machine=drawerMachines.find(m=>m.machine_id===target);
@@ -109,7 +128,7 @@
     document.querySelectorAll('[data-experience-action]').forEach(btn=>btn.addEventListener('click',()=>runExperienceAction(btn.dataset.experienceAction)));
     loadDrawerMachines().catch(console.error);
     setInterval(()=>loadDrawerMachines().catch(console.error),15000);
-    addMessage('assistant','<strong>Bienvenido a Predictive Copilot.</strong><p>Seleccione un perfil, una máquina o una experiencia para comenzar.</p>');
+    addMessage('assistant','<strong>Bienvenido a Predictive Copilot.</strong><p>Cuéntame en que te puedo ayudar.</p>');
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
 })();
