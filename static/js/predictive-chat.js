@@ -1,21 +1,17 @@
 (() => {
     const questionsByProfile = {
         operations: [
+            "¿Cual es el estado actual de las máquinas?",
             "¿Qué máquina debo intervenir primero?",
             "¿Por qué presenta ese riesgo?",
-            "¿Qué pasa si espero tres días?",
-            "Prepara una orden de mantenimiento"
+            "¿Qué medidas debo tomar en las próximas horas?"            
         ],
         finance: [
-            "¿Cuánto dinero está en riesgo?",
-            "¿Cuál es la pérdida potencial evitable?",
-            "¿Qué activo concentra el mayor riesgo financiero?",
-            "Compara intervenir versus no actuar"
+            
         ],
         technology: [
             "¿Qué datos utiliza esta predicción?",
-            "¿Por qué el modelo marca esta máquina?",
-            "¿Qué base vectorial está utilizando?",
+            "¿Por qué el modelo marca esta máquina?",            
             "¿Qué fuentes respaldan la respuesta?"
         ]
     };
