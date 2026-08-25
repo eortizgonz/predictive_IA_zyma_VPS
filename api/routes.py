@@ -95,7 +95,7 @@ async def dashboard(request: Request, response: Response, session_user: str | No
     response.headers["Pragma"] = "no-cache"
     response.headers["Expires"] = "0"
     
-    return templates.TemplateResponse("dashboard.html", {"request": request})
+    return templates.TemplateResponse(request=request, name="dashboard.html")
 
 
 # 2. Vista de Login
