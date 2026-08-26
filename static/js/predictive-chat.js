@@ -1,18 +1,16 @@
 (() => {
     const questionsByProfile = {
         operations: [
-            "¿Cual es el estado actual de las máquinas?",
+            "¿Cuál es el estado actual de las máquinas?",
             "¿Qué máquina debo intervenir primero?",
-            "¿Por qué presenta ese riesgo?",
-            "¿Qué medidas debo tomar en las próximas horas?"            
+            "¿Cuál es del diganostico de la máquina con mayor Riesgo?",
+            "¿Qué medidas debo tomar en las próximas horas con la máquina de mayor riesgo?"            
         ],
         finance: [
             
         ],
         technology: [
-            "¿Qué datos utiliza esta predicción?",
-            "¿Por qué el modelo marca esta máquina?",            
-            "¿Qué fuentes respaldan la respuesta?"
+            
         ]
     };
 
@@ -151,7 +149,7 @@
         byId("user-profile")?.addEventListener("change", renderQuickActions);
         renderQuickActions();
         refreshMachines().catch(console.error);
-        appendMessage("assistant", "<strong>Predictive Copilot listo.</strong><p>Seleccione un perfil y pregunte por riesgos, costos, tecnología o mantenimiento.</p>");
+        appendMessage("assistant", "<strong>Predictive Copilot listo para ayudarte.</strong>");
         window.setInterval(() => refreshMachines().catch(console.error), 15000);
     }
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initialize); else initialize();
