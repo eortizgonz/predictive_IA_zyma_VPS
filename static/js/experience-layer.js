@@ -15,7 +15,7 @@
   window.toggleExperienceDrawer = () => byId('experience-drawer')?.classList.contains('open') ? closeDrawer() : openDrawer();
   window.closeExperienceDrawer = closeDrawer;
   window.openExperience = mode => {
-    openDrawer();
+    // openDrawer();
     window.setTimeout(() => runExperienceAction(mode), 220);
   };
 

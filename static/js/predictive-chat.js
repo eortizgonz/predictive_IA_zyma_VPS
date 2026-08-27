@@ -2,9 +2,9 @@
     const questionsByProfile = {
         operations: [
             "¿Cuál es el estado actual de las máquinas?",
-            "¿Qué máquina debo intervenir primero?",
-            "¿Cuál es del diganostico de la máquina con mayor Riesgo?",
-            "¿Qué medidas debo tomar en las próximas horas con la máquina de mayor riesgo?"            
+            "¿Cuál es la máquina con mayor riego de falla?",
+            "¿Cuál es la máquina con menor riego de falla?"
+                       
         ],
         finance: [
             

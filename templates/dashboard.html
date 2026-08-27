@@ -59,23 +59,23 @@
             <div class="topbar-actions">
                 <span class="demo-badge">Datos simulados</span>
                 <button class="ghost-button" onclick="document.getElementById('copilot').scrollIntoView({behavior:'smooth'})">Consultar Copilot</button>
-                <a href="/logout" class="logout-button"><span>🚪</span> Salir</a>
+                <a href="/logout" class="logout-button"><span></span> Salir</a>
             </div>
         </header>
 
         <section class="experience-hub" aria-label="Centro de experiencia">
-            <button class="experience-card" type="button" onclick="openExperience('consultas')">
+            <!-- <button class="experience-card" type="button" onclick="openExperience('consultas')">
                 <span class="experience-icon">💬</span><span><strong>Consultar Copilot</strong><small>Pregunte por riesgos, activos y decisiones.</small></span><b>→</b>
-            </button>
+            </button> -->
             <button class="experience-card" type="button" onclick="openExperience('diagnostico')">
                 <span class="experience-icon">🧠</span><span><strong>Diagnóstico IA</strong><small>Manual técnico + modelo predictivo.</small></span><b>→</b>
             </button>
-            <button class="experience-card" type="button" onclick="openExperience('finanzas')">
+            <!-- <button class="experience-card" type="button" onclick="openExperience('finanzas')">
                 <span class="experience-icon">📈</span><span><strong>Impacto financiero</strong><small>Riesgo, pérdida evitable y ROI.</small></span><b>→</b>
-            </button>
-            <button class="experience-card" type="button" onclick="openExperience('tecnologia')">
+            </button> -->
+            <!-- <button class="experience-card" type="button" onclick="openExperience('tecnologia')">
                 <span class="experience-icon">⚙️</span><span><strong>Tecnología y datos</strong><small>Modelo, fuentes, ChromaDB y confianza.</small></span><b>→</b>
-            </button>
+            </button> -->
         </section>
 
         <section id="executive" class="section-block">
@@ -133,7 +133,13 @@
             <header class="copilot-header">
                 <div><span class="copilot-kicker">ASISTENTE DE DECISIONES</span><h2 id="copilot-title">Predictive Copilot</h2><p>Converse con el modelo, consulte manuales y compare decisiones.</p></div>
                 <div class="copilot-selectors">
-                    <label>Perfil<select id="user-profile"><option value="operations">Operaciones</option><option value="finance">Finanzas</option><option value="technology">Tecnología</option></select></label>
+                    <label>Perfil
+                        <select id="user-profile">
+                            <option value="operations">Operaciones</option>
+                            <!-- <option value="finance">Finanzas</option>
+                            <option value="technology">Tecnología</option> -->
+                        </select>
+                    </label>
                     <label>Máquina<select id="copilot-machine"><option value="">Todas las máquinas</option></select></label>
                 </div>
             </header>
@@ -156,9 +162,9 @@
     </main>
 </div>
 
-<button id="experience-launcher" class="experience-launcher" type="button" onclick="toggleExperienceDrawer()" aria-label="Abrir Predictive Copilot">
+<!-- <button id="experience-launcher" class="experience-launcher" type="button" onclick="toggleExperienceDrawer()" aria-label="Abrir Predictive Copilot">
     <span class="launcher-pulse"></span><span class="launcher-icon">AI</span><span class="launcher-label">Predictive Copilot</span>
-</button>
+</button> -->
 
 <div id="experience-backdrop" class="experience-backdrop" onclick="closeExperienceDrawer()"></div>
 
@@ -188,7 +194,9 @@
     <div class="modal-content">
         <div class="modal-header"><div><span class="modal-kicker">DIAGNÓSTICO FUNDAMENTADO</span><h2 id="modalTitle">Diagnóstico IA</h2></div><button class="modal-x" onclick="closeModal()" aria-label="Cerrar">×</button></div>
         <div id="modalContent" class="modal-body"></div>
-        <div class="modal-footer"><button class="btn-close" onclick="closeModal()">Cerrar diagnóstico</button><button class="btn-secondary" onclick="openDiagnosticInCopilot()">Consultar en Copilot</button></div>
+        <div class="modal-footer"><button class="btn-close" onclick="closeModal()">Cerrar diagnóstico
+        <!-- </button><button class="btn-secondary" onclick="openDiagnosticInCopilot()">Consultar en Copilot</button> -->
+    </div>
     </div>
 </div>
 
